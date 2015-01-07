@@ -26,6 +26,12 @@ module.exports = function(grunt) {
     // Define the configuration for all the tasks
     grunt.initConfig({
 
+        sitemap: {
+            dist: {
+                siteRoot: 'dist/public/'
+            }
+        },
+
         // Project settings
         pkg             : grunt.file.readJSON('package.json'),
         yeoman          : {
@@ -655,7 +661,8 @@ module.exports = function(grunt) {
         'cssmin',
         'uglify',
         'rev',
-        'usemin'
+        'usemin',
+        'sitemap'
     ]);
 
     grunt.registerTask('default', [
