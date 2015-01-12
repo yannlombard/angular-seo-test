@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('angularSeoTestFrontApp').controller('BleuSapinVosgCtrl', function($scope) {
-    $scope.message = 'Hello';
+angular.module('angularSeoTestFrontApp').controller('BleuSapinVosgCtrl', function($analytics) {
+    $analytics.pageTrack('/bleuSapinVosg');
 });

@@ -1,11 +1,7 @@
 'use strict';
 
-angular.module('angularSeoTestFrontApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+angular.module('angularSeoTestFrontApp').controller('MainCtrl', function($analytics) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+    $analytics.pageTrack('/');
 
-  });
+});
