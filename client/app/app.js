@@ -8,11 +8,12 @@ angular.module('angularSeoTestFrontApp', [
     'angulartics',
     'angulartics.google.analytics'
 ])
-    .config(function($routeProvider, $locationProvider) {
+    .config(function($routeProvider, $locationProvider, $analyticsProvider) {
         $routeProvider
             .otherwise({
                 redirectTo: '/'
             });
 
         $locationProvider.html5Mode(true);
+        $analyticsProvider.virtualPageviews(false);
     });
