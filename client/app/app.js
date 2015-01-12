@@ -4,7 +4,9 @@ angular.module('angularSeoTestFrontApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'angulartics',
+    'angulartics.google.analytics'
 ])
     .config(function($routeProvider, $locationProvider) {
         $routeProvider
