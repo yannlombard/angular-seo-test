@@ -1,7 +1,5 @@
 'use strict';
 
-angular.module('angularSeoTestFrontApp').controller('MainCtrl', function($analytics) {
-
-    $analytics.pageTrack('/');
+angular.module('angularSeoTestFrontApp').controller('MainCtrl', function() {
 
 });

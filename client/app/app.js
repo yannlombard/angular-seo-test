@@ -9,7 +9,7 @@ angular.module('angularSeoTestFrontApp', [
     'angulartics.google.analytics'
 ])
     .config(function($routeProvider, $locationProvider, $analyticsProvider) {
-        $analyticsProvider.virtualPageviews(false);
+        $analyticsProvider.virtualPageviews(true);
 
         $routeProvider
             .otherwise({
