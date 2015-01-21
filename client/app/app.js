@@ -6,10 +6,17 @@ angular.module('angularSeoTestFrontApp', [
     'ngSanitize',
     'ngRoute',
     'angulartics',
-    'angulartics.google.analytics'
+    'angulartics.google.analytics',
+    'uiGmapgoogle-maps'
 ])
-    .config(function($routeProvider, $locationProvider, $analyticsProvider) {
+    .config(function($routeProvider, $locationProvider, $analyticsProvider, uiGmapGoogleMapApiProvider) {
         $analyticsProvider.virtualPageviews(true);
+
+        uiGmapGoogleMapApiProvider.configure({
+            //key: 'your api key',
+            v        : '3.17',
+            libraries: 'weather,geometry,visualization'
+        });
 
         $routeProvider
             .otherwise({

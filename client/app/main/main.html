@@ -1,17 +1,26 @@
-<div class="jumbotron">
-    <h1>Référencer une application Angular</h1>
-    <p>
-        <a class="btn btn-lg btn-success" href="bleuSapinVosg">
-            Test mot clé <strong>bleuSapinVosg</strong>
-            <span class="glyphicon glyphicon-ok"></span>
-        </a>
-    </p>
-</div>
+<div class="container">
+    <div ng-include="'components/ui/header.html'"></div>
 
-<div class="row marketing">
-    <h2>Exemple de projet référencé sous Angular</h2>
-    <p>
-        Basé sur le générateur yeoman generator-angular :
-        <a analytics-on="click" analytics-event="gotoGithubRepository" href="https://github.com/yannlombard/angular-seo-test" target="_blank">https://github.com/yannlombard/angular-seo-test</a>
-    </p>
+    <div class="jumbotron">
+        <h1>Référencer une application Angular</h1>
+
+        <p>
+            <a class="btn btn-lg btn-success" href="bleuSapinVosg">
+                Test mot clé <strong>bleuSapinVosg</strong>
+                <span class="glyphicon glyphicon-ok"></span>
+            </a>
+        </p>
+    </div>
+
+    <div class="row marketing">
+        <h2>Exemple de projet référencé sous Angular</h2>
+
+        <p>
+            Basé sur le générateur yeoman generator-angular :
+            <a analytics-on="click" analytics-event="gotoGithubRepository"
+               href="https://github.com/yannlombard/angular-seo-test" target="_blank">https://github.com/yannlombard/angular-seo-test</a>
+        </p>
+    </div>
+
+    <div ng-include="'components/ui/footer.html'"></div>
 </div>

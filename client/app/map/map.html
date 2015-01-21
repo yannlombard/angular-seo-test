@@ -1,3 +1,24 @@
-<div>
-    Map view \o/
+<div class="pageMapWrapper">
+
+    <div class="column">
+        <h1 class="mainTitle">Les salles de poker à <strong>Lyon</strong></h1>
+
+        <ol class="list">
+            <li>
+                <h2 class="listTitle">Lorem ipsum</h2>
+                <p>138 avenue des frères Lumière, 69008 Lyon</p>
+                <a href="http://lasdepique.com/" target="_blank">http://lasdepique.com/</a>
+            </li>
+        </ol>
+    </div>
+
+    <ui-gmap-google-map
+        center="ctrl.map.center"
+        zoom="ctrl.map.zoom"
+        options="ctrl.options"
+        pan="true">
+
+        <ui-gmap-markers models="ctrl.markers" coords="'coords'"></ui-gmap-markers>
+
+    </ui-gmap-google-map>
 </div>

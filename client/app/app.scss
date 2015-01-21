@@ -13,8 +13,8 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -75,6 +75,7 @@ body {
 
 // Component styles are injected through grunt
 // injector
+@import '_vars.scss';
 @import 'bleuSapinVosg/bleuSapinVosg.scss';
 @import 'main/main.scss';
 @import 'map/map.scss';
