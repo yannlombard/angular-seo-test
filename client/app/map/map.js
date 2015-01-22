@@ -5,6 +5,11 @@ angular.module('angularSeoTestFrontApp').config(function($routeProvider) {
         .when('/:cityName', {
             templateUrl : 'app/map/map.html',
             controller  : 'MapCtrl',
-            controllerAs: 'ctrl'
+            controllerAs: 'ctrl',
+            resolve: {
+                rooms: ['$firebase', function($firebase) {
+                    return $firebase(new Firebase('https://pokerux.firebaseio.com/list')).$asArray().$loaded();
+                }]
+            }
         });
 });
