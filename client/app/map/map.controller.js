@@ -2,7 +2,7 @@
 
 angular.module('angularSeoTestFrontApp').controller('MapCtrl', function($firebase) {
 
-    var ref = new Firebase('https://pokerux.firebaseio-demo.com/list/');
+    var ref = new Firebase('https://pokerux.firebaseio.com/list');
 
     this.map = {
         center: {
