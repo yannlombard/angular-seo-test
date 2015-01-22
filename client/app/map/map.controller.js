@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('angularSeoTestFrontApp').controller('MapCtrl', function() {
+angular.module('angularSeoTestFrontApp').controller('MapCtrl', function($firebase) {
+
+    var ref = new Firebase('https://pokerux.firebaseio-demo.com/list/');
 
     this.map = {
         center: {
@@ -14,15 +16,6 @@ angular.module('angularSeoTestFrontApp').controller('MapCtrl', function() {
         disableDefaultUI: true
     };
 
-    this.markers = [
-        {
-            id    : 0,
-            coords: {
-                latitude : 45.7438798,
-                longitude: 4.8712624
-            }
-        }
-    ];
-
+    this.rooms = $firebase(ref).$asArray();
 
 });

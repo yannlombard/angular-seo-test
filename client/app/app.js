@@ -7,7 +7,8 @@ angular.module('angularSeoTestFrontApp', [
     'ngRoute',
     'angulartics',
     'angulartics.google.analytics',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'firebase'
 ])
     .config(function($routeProvider, $locationProvider, $analyticsProvider, uiGmapGoogleMapApiProvider) {
         $analyticsProvider.virtualPageviews(true);

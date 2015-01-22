@@ -4,10 +4,10 @@
         <h1 class="mainTitle">Les salles de poker à <strong>Lyon</strong></h1>
 
         <ol class="list">
-            <li>
-                <h2 class="listTitle">Lorem ipsum</h2>
-                <p>138 avenue des frères Lumière, 69008 Lyon</p>
-                <a href="http://lasdepique.com/" target="_blank">http://lasdepique.com/</a>
+            <li ng-repeat="room in ctrl.rooms">
+                <h2 class="listTitle">{{room.name}}</h2>
+                <p>{{room.address}}</p>
+                <a href="{{room.website}}" target="_blank">{{room.website}}</a>
             </li>
         </ol>
     </div>
@@ -18,7 +18,7 @@
         options="ctrl.options"
         pan="true">
 
-        <ui-gmap-markers models="ctrl.markers" coords="'coords'"></ui-gmap-markers>
+        <ui-gmap-markers models="ctrl.rooms" coords="'coords'"></ui-gmap-markers>
 
     </ui-gmap-google-map>
 </div>
