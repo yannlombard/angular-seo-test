@@ -7,7 +7,9 @@
             <li ng-repeat="room in ctrl.rooms">
                 <h2 class="listTitle">{{room.name}}</h2>
                 <p>{{room.address}}</p>
-                <a href="{{room.website}}" target="_blank">{{room.website}}</a>
+                <a
+                    analytics-on="click" analytics-event="pokerWebsite" analytics-category="ExternalLinks" analytics-label="{{room.name}}"
+                    href="{{room.website}}" target="_blank">{{room.website}}</a>
             </li>
         </ol>
     </div>
