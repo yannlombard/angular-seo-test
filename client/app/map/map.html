@@ -1,15 +1,30 @@
 <div class="pageMapWrapper">
 
     <div class="column">
-        <h1 class="mainTitle">Les salles de poker à <strong>Lyon</strong></h1>
+        <h1 class="mainTitle">
+            <img class="picto" src="assets/images/PokerUX.png" alt=""/><!--
+            --><span class="text">
+                <span>Les salles de poker à</span>
+                <strong>Lyon.</strong>
+            </span>
+        </h1>
 
-        <ol class="list">
-            <li ng-repeat="room in ctrl.rooms">
+        <ol class="list" ng-class="{hover: ctrl.listHover}">
+            <li ng-class="{hover: room.hover}"
+                ng-repeat="room in ctrl.rooms"
+                ng-mouseenter="ctrl.mouseEnterRoom(room);"
+                ng-mouseleave="ctrl.mouseLeaveRoom(room);">
+
                 <h2 class="listTitle">{{room.name}}</h2>
-                <p>{{room.address}}</p>
-                <a
-                    analytics-on="click" analytics-event="pokerWebsite" analytics-category="ExternalLinks" analytics-label="{{room.name}}"
-                    href="{{room.website}}" target="_blank">{{room.website}}</a>
+
+                <p class="address" ng-bind-html="room.address"></p>
+
+                <div class="alignRight">
+                    <a class="roomLink"
+                       analytics-on="click" analytics-event="pokerWebsite" analytics-category="ExternalLinks"
+                       analytics-label="{{room.name}}"
+                       href="{{room.website}}" target="_blank">{{room.website}}</a>
+                </div>
             </li>
         </ol>
     </div>
@@ -19,6 +34,11 @@
         zoom="ctrl.map.zoom"
         options="ctrl.options"
         pan="true">
-        <ui-gmap-markers models="ctrl.rooms" idKey="'$id'" coords="'coords'"></ui-gmap-markers>
+        <ui-gmap-markers
+            models="ctrl.rooms"
+            idKey="'$id'"
+            coords="'coords'"
+            options="'options'"
+            events="ctrl.markersEvents"></ui-gmap-markers>
     </ui-gmap-google-map>
 </div>
