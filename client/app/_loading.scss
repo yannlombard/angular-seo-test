@@ -1,0 +1,16 @@
+@import 'vars';
+
+/**
+ * home page loading message
+ */
+.homeLoading {
+    position: absolute;
+    top: 2em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #EEE;
+    font: 200 5em/1 $police1;
+    text-transform: uppercase;
+    text-align: center;
+}
