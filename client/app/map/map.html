@@ -1,32 +1,36 @@
 <div class="pageMapWrapper">
 
     <div class="column">
-        <h1 class="mainTitle">
+        <h1 class="mainTitle"
+            ng-click="ctrl.map.center=ctrl.defaultMapConfig.center;ctrl.map.zoom=ctrl.defaultMapConfig.zoom;">
             <img class="picto" src="assets/images/PokerUX.png" alt=""/><!--
-            --><span class="text">
+        --><span class="text">
                 <span>Les salles de poker à</span>
                 <strong>Lyon.</strong>
             </span>
         </h1>
 
-        <ol class="list" ng-class="{hover: ctrl.listHover}">
-            <li ng-class="{hover: room.hover}"
-                ng-repeat="room in ctrl.rooms"
-                ng-mouseenter="ctrl.mouseEnterRoom(room);"
-                ng-mouseleave="ctrl.mouseLeaveRoom(room);">
+        <div class="scrollWrapper">
+            <ol class="list" ng-class="{hover: ctrl.listHover}">
+                <li ng-class="{hover: room.hover}"
+                    ng-repeat="room in ctrl.rooms"
+                    ng-click="ctrl.map.center = room.coords;ctrl.map.zoom = 15"
+                    ng-mouseenter="ctrl.mouseEnterRoom(room);"
+                    ng-mouseleave="ctrl.mouseLeaveRoom(room);">
 
-                <h2 class="listTitle">{{room.name}}</h2>
+                    <h2 class="listTitle">{{room.name}}</h2>
 
-                <p class="address" ng-bind-html="room.address"></p>
+                    <p class="address" ng-bind-html="room.address"></p>
 
-                <div class="alignRight">
-                    <a class="roomLink"
-                       analytics-on="click" analytics-event="pokerWebsite" analytics-category="ExternalLinks"
-                       analytics-label="{{room.name}}"
-                       href="{{room.website}}" target="_blank">{{room.website}}</a>
-                </div>
-            </li>
-        </ol>
+                    <div class="alignRight">
+                        <a class="roomLink"
+                           analytics-on="click" analytics-event="pokerWebsite" analytics-category="ExternalLinks"
+                           analytics-label="{{room.name}}"
+                           href="{{room.website}}" target="_blank">{{room.website}}</a>
+                    </div>
+                </li>
+            </ol>
+        </div>
     </div>
 
     <ui-gmap-google-map

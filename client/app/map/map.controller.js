@@ -4,13 +4,15 @@ angular.module('angularSeoTestFrontApp').controller('MapCtrl', function(rooms) {
 
     var vm = this;
 
-    this.map = {
+    this.defaultMapConfig = {
         center: {
             latitude : 45.7579555,
             longitude: 4.8351209
         },
         zoom  : 12
     };
+
+    this.map = angular.copy(this.defaultMapConfig);
 
     this.options = {
         disableDefaultUI: true
